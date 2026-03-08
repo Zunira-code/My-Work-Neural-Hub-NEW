@@ -29,20 +29,20 @@ const ContactSection = () => {
           className="max-w-2xl mx-auto grid sm:grid-cols-3 gap-6"
         >
           <a
-            href="mailto:hello@mywork.co.ke"
+            href="mailto:linkedin@mywork.co.ke"
             className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 hover:bg-primary-foreground/10 transition"
           >
             <Mail className="w-8 h-8 text-accent" />
-            <span className="text-sm font-medium text-primary-foreground">hello@mywork.co.ke</span>
+            <span className="text-sm font-medium text-primary-foreground">linkedin@mywork.co.ke</span>
           </a>
           <a
-            href="https://wa.me/254700000000"
+            href="https://wa.me/254716534393"
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 hover:bg-primary-foreground/10 transition"
           >
             <MessageCircle className="w-8 h-8 text-accent" />
-            <span className="text-sm font-medium text-primary-foreground">WhatsApp</span>
+            <span className="text-sm font-medium text-primary-foreground">+254 716 534 393</span>
           </a>
           <div className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10">
             <MapPin className="w-8 h-8 text-accent" />
