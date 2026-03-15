@@ -26,7 +26,7 @@ const CeoSection = () => {
           <div className="flex-shrink-0">
             <div className="w-40 h-40 rounded-2xl overflow-hidden ring-4 ring-accent/20">
               <img
-                src="https://media.licdn.com/dms/image/v2/D4D22AQEuhWSx92zjbg/feedshare-shrink_800/B4DZxs9O6KH4Ag-/0/1771354517392?e=1773273600&v=beta&t=7knN39LLE52MictgpEiy0UrEA1PjcekTJkRex8jazGU"
+                src={zuniraPhoto}
                 alt="Zunira Yusuf, Founder and CEO"
                 className="w-full h-full object-cover"
               />
