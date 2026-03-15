@@ -42,7 +42,7 @@ const HeroSection = () => {
                 View Packages <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="https://id-preview--a48fe577-f02a-4655-b6fb-83fcddb9fe5a.lovable.app/"
+                href="https://httpslovabledevprojects436f5fd9-b4b8-4c8b-9f7.lovable.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg border border-primary-foreground/20 text-primary-foreground font-semibold hover:bg-primary-foreground/5 transition text-base"
