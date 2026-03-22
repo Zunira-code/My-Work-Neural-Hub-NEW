@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Linkedin } from "lucide-react";
-import zuniraPhoto from "@/assets/zunira-yusuf.jpg";
+import zuniraPhoto from "@/assets/zunira-yusuf.png";
 
 const CeoSection = () => {
   return (
