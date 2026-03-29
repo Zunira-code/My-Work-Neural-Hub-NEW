@@ -57,10 +57,15 @@ const ContactSection = () => {
             <WhatsAppIcon className="w-8 h-8 text-[#25D366]" />
             <span className="text-sm font-medium text-primary-foreground">+254 716 534 393</span>
           </a>
-          <div className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10">
+          <a
+            href="https://mywork.co.ke/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 hover:bg-primary-foreground/10 transition"
+          >
             <MapPin className="w-8 h-8 text-accent" />
-            <span className="text-sm font-medium text-primary-foreground">Nairobi, Kenya</span>
-          </div>
+            <span className="text-sm font-medium text-primary-foreground">mywork.co.ke</span>
+          </a>
         </motion.div>
       </div>
     </section>
