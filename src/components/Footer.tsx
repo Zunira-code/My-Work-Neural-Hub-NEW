@@ -24,7 +24,6 @@ const Footer = () => {
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li><a href="#about" className="hover:text-primary transition">About</a></li>
             <li><a href="#homes" className="hover:text-primary transition">Our Homes</a></li>
-            <li><a href="#impact" className="hover:text-primary transition">Impact</a></li>
             <li><a href="#involved" className="hover:text-primary transition">Get Involved</a></li>
           </ul>
         </div>
@@ -33,8 +32,8 @@ const Footer = () => {
           <div className="font-semibold text-foreground mb-3 text-sm uppercase tracking-wider">Contact</div>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>Westlands, Nairobi</li>
-            <li>+254 700 000 000</li>
-            <li>hello@amanihomes.co.ke</li>
+            <li>+254 716534393</li>
+            <li>linkedin@mywork.co.ke</li>
           </ul>
         </div>
       </div>
