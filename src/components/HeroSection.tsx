@@ -1,91 +1,60 @@
 import { motion } from "framer-motion";
-import { Sparkles, ArrowRight } from "lucide-react";
-import heroImg from "@/assets/hero-assistant.jpg";
+import { ArrowRight, Heart } from "lucide-react";
+import heroImg from "@/assets/amani-hero.jpg";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="hero-bg relative overflow-hidden pt-20">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-accent rounded-full blur-[120px]" />
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent rounded-full blur-[150px]" />
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+      <div className="absolute inset-0">
+        <img src={heroImg} alt="Renovated home in Nairobi at golden hour" className="w-full h-full object-cover animate-ken-burns" width={1920} height={1280} />
+        <div className="absolute inset-0 bg-gradient-hero" />
       </div>
 
-      <div className="container mx-auto section-padding relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Text */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-center lg:text-left"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6">
-              <Sparkles className="w-4 h-4 text-accent" />
-              <span className="text-sm font-medium text-accent">AI-Enhanced Virtual Assistants</span>
-            </div>
+      <div className="container mx-auto relative z-10 pt-24 pb-16 px-4 md:px-8">
+        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-3xl">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 mb-6">
+            <Heart className="w-3.5 h-3.5 text-secondary fill-secondary" />
+            <span className="text-xs font-medium text-primary-foreground uppercase tracking-widest">Social Impact · Real Estate · Nairobi</span>
+          </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
-              Welcome to{" "}
-              <span className="text-gradient">My Work Neural Hub</span>
-            </h1>
+          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-primary-foreground leading-[1.05] mb-6 text-balance">
+            Turning Abandoned Homes <em className="text-secondary not-italic">into</em> Hopeful Futures
+          </h1>
 
-            <p className="text-lg md:text-xl text-primary-foreground/70 max-w-xl mb-8 leading-relaxed">
-              Based in Kenya, we provide AI-enhanced virtual assistants to clients in the USA, Canada, UK, Germany, and Australia. Trained, managed, and ready to work from day one.
-            </p>
+          <p className="text-lg md:text-xl text-primary-foreground/85 max-w-2xl mb-10 leading-relaxed">
+            We renovate neglected properties across Nairobi and provide affordable, dignified housing to families who need it most — restoring spaces, restoring hope.
+          </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a
-                href="#packages"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-accent text-accent-foreground font-semibold hover:brightness-110 transition text-base"
-              >
-                View Packages <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
-                href="https://httpslovabledevprojects436f5fd9-b4b8-4c8b-9f7.lovable.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg border border-primary-foreground/20 text-primary-foreground font-semibold hover:bg-primary-foreground/5 transition text-base"
-              >
-                🧠 Neural Hub Login
-              </a>
-            </div>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a href="#homes" className="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-md bg-secondary text-secondary-foreground font-semibold hover:brightness-110 transition shadow-card">
+              Browse Available Homes
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a href="#involved" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-md bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/30 text-primary-foreground font-semibold hover:bg-primary-foreground/20 transition">
+              Partner With Us
+            </a>
+          </div>
+
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.8 }}
+            className="mt-14 grid grid-cols-3 gap-4 sm:gap-8 max-w-xl">
+            {[
+              { n: "127", l: "Homes Renovated" },
+              { n: "412", l: "Families Housed" },
+              { n: "85+", l: "Local Jobs Created" },
+            ].map((s) => (
+              <div key={s.l}>
+                <div className="font-serif text-3xl md:text-4xl text-secondary">{s.n}</div>
+                <div className="text-xs md:text-sm text-primary-foreground/70 mt-1">{s.l}</div>
+              </div>
+            ))}
           </motion.div>
+        </motion.div>
+      </div>
 
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative flex justify-center"
-          >
-            <div className="relative">
-              <div className="absolute -inset-4 rounded-3xl bg-accent/10 blur-2xl" />
-              <img
-                src={heroImg}
-                alt="AI-enhanced virtual assistant professional"
-                className="relative rounded-3xl w-full max-w-lg shadow-2xl"
-              />
-              {/* Floating badge */}
-              <motion.div
-                animate={{ y: [0, -12, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -right-4 top-16 glass-card rounded-2xl px-4 py-3"
-              >
-                <p className="text-sm font-semibold text-foreground">🌍 5+ Countries</p>
-                <p className="text-xs text-muted-foreground">Global coverage</p>
-              </motion.div>
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -left-4 bottom-20 glass-card rounded-2xl px-4 py-3"
-              >
-                <p className="text-sm font-semibold text-foreground">⚡ AI-Powered</p>
-                <p className="text-xs text-muted-foreground">Neural efficiency</p>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-primary-foreground/60 text-xs uppercase tracking-widest">
+        <span>Scroll</span>
+        <div className="w-px h-12 bg-primary-foreground/40 animate-float-slow" />
       </div>
     </section>
   );
