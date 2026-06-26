@@ -19,7 +19,7 @@ const AboutSection = () => {
           <img src={familyImg} alt="Kenyan family standing proudly outside their renovated home" loading="lazy" width={1024} height={1024}
             className="rounded-2xl shadow-lift w-full object-cover aspect-[4/5]" />
           <div className="absolute -bottom-6 -right-6 hidden md:block bg-card rounded-2xl p-5 shadow-card max-w-[220px]">
-            <div className="font-serif text-3xl text-primary">2,400+</div>
+            <div className="font-serif text-3xl text-primary">50+</div>
             <div className="text-sm text-muted-foreground">Lives touched since we began our journey in Nairobi</div>
           </div>
         </motion.div>
