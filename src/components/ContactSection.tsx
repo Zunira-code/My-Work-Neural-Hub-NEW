@@ -33,16 +33,16 @@ const ContactSection = () => {
               </div>
               <div>
                 <div className="text-xs text-primary-foreground/60 uppercase tracking-widest">Email</div>
-                <div className="font-medium">hello@amanihomes.co.ke</div>
+                <div className="font-medium">linkedin@mywork.co.ke</div>
               </div>
             </a>
-            <a href="tel:+254700000000" className="flex gap-4 items-start group">
+            <a href="tel:+254716534393" className="flex gap-4 items-start group">
               <div className="w-11 h-11 rounded-xl bg-primary-foreground/10 flex items-center justify-center group-hover:bg-secondary transition">
                 <Phone className="w-5 h-5" />
               </div>
               <div>
                 <div className="text-xs text-primary-foreground/60 uppercase tracking-widest">Phone</div>
-                <div className="font-medium">+254 700 000 000</div>
+                <div className="font-medium">+254 716534393</div>
               </div>
             </a>
             <div className="flex gap-4 items-start">
@@ -67,7 +67,7 @@ const ContactSection = () => {
           <div className="mt-10 pt-6 border-t border-primary-foreground/20 text-xs text-primary-foreground/60">
             <div className="inline-flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-accent" />
-              Registered company in Kenya · CR12/Amani/2021
+              Registered company in Kenya · CR12/Amani/2026
             </div>
           </div>
         </motion.div>
