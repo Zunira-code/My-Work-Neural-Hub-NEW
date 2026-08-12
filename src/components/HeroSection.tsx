@@ -1,23 +1,51 @@
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Search, MapPin, ArrowRight, BadgeCheck, Plane, Users } from "lucide-react";
 import heroImg from "@/assets/aegis-hero.jpg";
+import heroImg2 from "@/assets/aegis-hero-2.jpg";
+import heroImg3 from "@/assets/aegis-hero-3.jpg";
 
 const roles = ["Caregivers", "Healthcare Assistants", "Receptionists", "Baristas", "Mixologists"];
 
+const slides = [
+  { src: heroImg, alt: "Kenyan caregiver placed abroad by Aegis Global Recruitment Agency" },
+  { src: heroImg2, alt: "Kenyan receptionist and barista team working in a hotel abroad" },
+  { src: heroImg3, alt: "Kenyan healthcare assistant supporting an elderly resident in a care home abroad" },
+];
+
 const HeroSection = () => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setIndex((i) => (i + 1) % slides.length), 6000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section id="home" className="relative pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden">
       <div className="absolute inset-0">
-        <img src={heroImg} alt="Kenyan caregiver and healthcare assistant placed abroad by Aegis Global Recruitment Agency"
-          className="w-full h-full object-cover object-center" width={1600} height={1104} />
+        <AnimatePresence mode="sync">
+          <motion.img
+            key={index}
+            src={slides[index].src}
+            alt={slides[index].alt}
+            initial={{ opacity: 0, scale: 1.08 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ opacity: { duration: 1.4 }, scale: { duration: 7, ease: "linear" } }}
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            width={1600} height={1100}
+          />
+        </AnimatePresence>
         <div className="absolute inset-0 bg-gradient-hero" />
       </div>
 
+
       <div className="container-narrow relative z-10 px-4 md:px-8">
         <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/15 border border-accent/40 mb-6">
-            <BadgeCheck className="w-4 h-4 text-accent" />
-            <span className="text-[11px] font-semibold text-accent uppercase tracking-[0.15em]">Global Placement · Nairobi, Kenya</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/15 border border-primary/40 mb-6">
+            <BadgeCheck className="w-4 h-4 text-primary" />
+            <span className="text-[11px] font-semibold text-primary uppercase tracking-[0.15em]">Global Placement · Nairobi, Kenya</span>
           </div>
 
           <h1 className="font-display font-extrabold text-4xl md:text-5xl lg:text-[3.4rem] text-primary-foreground leading-[1.08] mb-5 text-balance">
@@ -60,7 +88,7 @@ const HeroSection = () => {
               { icon: BadgeCheck, n: "96%", l: "Contract completion" },
             ].map((s) => (
               <div key={s.l}>
-                <s.icon className="w-4 h-4 text-accent mb-2" />
+                <s.icon className="w-4 h-4 text-primary mb-2" />
                 <div className="font-display font-bold text-2xl md:text-3xl text-primary-foreground">{s.n}</div>
                 <div className="text-[11px] md:text-xs text-primary-foreground/70 mt-1 leading-snug">{s.l}</div>
               </div>

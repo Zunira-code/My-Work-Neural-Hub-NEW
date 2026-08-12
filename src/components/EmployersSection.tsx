@@ -50,7 +50,7 @@ const EmployersSection = () => {
             ))}
           </ul>
 
-          <a href="#contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-accent text-accent-foreground font-semibold text-sm hover:brightness-105 transition shadow-soft">
+          <a href="#contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-accent text-primary-foreground font-semibold text-sm hover:brightness-105 transition shadow-soft">
             Request a shortlist <ArrowRight className="w-4 h-4" />
           </a>
         </motion.div>
@@ -60,7 +60,7 @@ const EmployersSection = () => {
             <img src={hospitalityImg} alt="Barista and hotel receptionist placed abroad by Aegis Global" loading="lazy" width={1200} height={900} className="w-full object-cover" />
           </div>
           <div className="absolute -bottom-6 -left-4 md:left-6 bg-primary text-primary-foreground rounded-xl p-5 shadow-card max-w-[15rem]">
-            <div className="font-display font-bold text-3xl text-accent">21 days</div>
+            <div className="font-display font-bold text-3xl text-primary">21 days</div>
             <div className="text-xs text-primary-foreground/80 mt-1 leading-snug">Average time from brief to signed candidate offer</div>
           </div>
         </motion.div>

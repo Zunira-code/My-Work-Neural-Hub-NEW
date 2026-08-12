@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ShieldCheck, Phone } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
+import logo from "@/assets/aegis-logo.png";
 
 const links = [
   { label: "Home", href: "#home" },
@@ -29,7 +30,7 @@ const Navbar = () => {
       <div className="hidden md:block bg-primary text-primary-foreground/90 text-xs">
         <div className="container-narrow px-4 md:px-8 h-9 flex items-center justify-between">
           <span>Licensed Kenyan recruitment agency · NEA compliant · Ethical, zero-exploitation placement</span>
-          <a href="tel:+254716534393" className="inline-flex items-center gap-1.5 hover:text-accent transition">
+          <a href="tel:+254716534393" className="inline-flex items-center gap-1.5 hover:text-primary-foreground transition">
             <Phone className="w-3.5 h-3.5" /> +254 716 534 393
           </a>
         </div>
@@ -38,11 +39,12 @@ const Navbar = () => {
       <nav className={`transition-all duration-300 ${scrolled ? "bg-background/95 backdrop-blur-md shadow-soft" : "bg-background/90 backdrop-blur-sm"}`}>
         <div className="container-narrow px-4 md:px-8 flex items-center justify-between h-16 lg:h-[72px]">
           <a href="#home" className="flex items-center gap-2.5 group shrink-0">
-            <div className="w-10 h-10 rounded-md bg-gradient-brand text-primary-foreground flex items-center justify-center">
-              <ShieldCheck className="w-5 h-5" strokeWidth={2.4} />
-            </div>
+            <img src={logo} alt="Aegis Global Recruitment Agency logo" width={44} height={44}
+              className="w-10 h-10 md:w-11 md:h-11 object-contain" />
             <div className="leading-none">
-              <div className="font-display font-extrabold text-[15px] md:text-base text-primary tracking-tight">AEGIS GLOBAL</div>
+              <div className="font-display font-extrabold text-[15px] md:text-base text-foreground tracking-tight">
+                AEGIS <span className="text-primary">GLOBAL</span>
+              </div>
               <div className="text-[9px] md:text-[10px] uppercase tracking-[0.18em] text-muted-foreground mt-1">Recruitment Agency</div>
             </div>
           </a>

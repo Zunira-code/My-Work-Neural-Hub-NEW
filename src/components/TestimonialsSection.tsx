@@ -25,10 +25,10 @@ const TestimonialsSection = () => {
             <motion.blockquote key={t.role}
               initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (i % 3) * 0.08 }}
               className="bg-card rounded-xl border border-border p-6 hover:shadow-card transition">
-              <Quote className="w-6 h-6 text-accent mb-4" />
+              <Quote className="w-6 h-6 text-primary mb-4" />
               <p className="text-sm text-foreground/85 leading-relaxed mb-5">"{t.text}"</p>
               <div className="flex items-center gap-1 mb-2">
-                {Array.from({ length: 5 }).map((_, k) => <Star key={k} className="w-3.5 h-3.5 fill-accent text-accent" />)}
+                {Array.from({ length: 5 }).map((_, k) => <Star key={k} className="w-3.5 h-3.5 fill-primary text-primary" />)}
               </div>
               <footer className="text-xs font-semibold text-muted-foreground">{t.role}</footer>
             </motion.blockquote>
