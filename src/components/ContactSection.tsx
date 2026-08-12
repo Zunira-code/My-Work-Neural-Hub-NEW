@@ -119,7 +119,7 @@ const ContactSection = () => {
             Submit enquiry <ArrowRight className="w-4 h-4" />
           </button>
           <p className="text-[11px] text-muted-foreground mt-3 text-center">
-            Aegis Global never charges job seekers a placement fee.
+            Our Nairobi team replies within one working day.
           </p>
         </motion.form>
       </div>

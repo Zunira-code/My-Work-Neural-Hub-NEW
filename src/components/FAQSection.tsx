@@ -1,7 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
-  { q: "Do I have to pay to be placed?", a: "No. Aegis Global operates a candidate-zero-fee model — employers pay our recruitment fee. You are only responsible for your own personal costs such as passport, and in some routes medicals, which we tell you about upfront in writing." },
+  { q: "How does the application process work?", a: "You submit your details, we screen and interview you, then we match you to a verified employer vacancy. Every cost and requirement in your route is explained to you upfront in writing before you commit." },
   { q: "Which qualifications do I need as a caregiver or healthcare assistant?", a: "Most destinations require a certificate in nursing, community health or care work, plus documented hands-on experience. We also accept strong practical experience and can route you into a top-up certification before departure." },
   { q: "How long does the whole process take?", a: "Typically 8 to 16 weeks from your first interview to departure, depending on the destination's visa processing times. Gulf routes are usually fastest; UK, Ireland and Canada take longer due to sponsorship checks." },
   { q: "Do I need to speak a foreign language?", a: "For the UK, Ireland, Canada, the Gulf and cruise lines, professional English is sufficient and we assess it during screening. For Germany and Poland we support candidates through basic language training before departure." },

@@ -46,7 +46,7 @@ const Footer = () => {
       <div className="border-t border-primary-foreground/15">
         <div className="container-narrow px-4 md:px-8 py-5 flex flex-col md:flex-row gap-3 justify-between items-center text-xs text-primary-foreground/60">
           <div>© {new Date().getFullYear()} Aegis Global Recruitment Agency. Registered in Kenya. All rights reserved.</div>
-          <div>Ethical recruitment · Licensed &amp; NEA compliant</div>
+          <div>Ethical recruitment · Licensed and NEA compliant</div>
         </div>
       </div>
     </footer>
