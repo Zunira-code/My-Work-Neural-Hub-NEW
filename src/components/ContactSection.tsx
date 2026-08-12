@@ -42,7 +42,9 @@ const ContactSection = () => {
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const parsed = enquirySchema.safeParse(form);
     if (!parsed.success) {
@@ -50,25 +52,51 @@ const ContactSection = () => {
       return;
     }
     const d = parsed.data;
-    const subject = `Website enquiry — ${d.name} (${d.iam}, ${d.role})`;
-    const body = [
-      `Name: ${d.name}`,
-      `Phone / WhatsApp: ${d.phone}`,
-      `Email: ${d.email}`,
-      `I am a: ${d.iam}`,
-      `Role of interest: ${d.role}`,
-      "",
-      "Message:",
-      d.message || "(none)",
-    ].join("\n");
+    setSending(true);
+    try {
+      const eventId = crypto.randomUUID();
+      const { error } = await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "enquiry-notification",
+          recipientEmail: ENQUIRY_EMAIL,
+          idempotencyKey: `enquiry-notification-${eventId}`,
+          templateData: {
+            name: d.name,
+            email: d.email,
+            phone: d.phone,
+            iam: d.iam,
+            role: d.role,
+            message: d.message,
+          },
+        },
+      });
+      if (error) throw error;
 
-    window.location.href = `mailto:${ENQUIRY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "enquiry-confirmation",
+          recipientEmail: d.email,
+          idempotencyKey: `enquiry-confirmation-${eventId}`,
+          templateData: { name: d.name, role: d.role },
+        },
+      });
 
-    toast({
-      title: "Enquiry ready to send",
-      description: `Your email app is opening with the enquiry addressed to ${ENQUIRY_EMAIL}. Press send to complete it.`,
-    });
+      toast({
+        title: "Enquiry sent",
+        description: "Thank you — our Nairobi team will reply within one working day.",
+      });
+      setForm({ name: "", phone: "", email: "", iam: "Job seeker", role: "Caregiver", message: "" });
+    } catch {
+      toast({
+        title: "Could not send enquiry",
+        description: `Please try again, or email us directly at ${ENQUIRY_EMAIL}.`,
+        variant: "destructive",
+      });
+    } finally {
+      setSending(false);
+    }
   };
+
 
   return (
 
