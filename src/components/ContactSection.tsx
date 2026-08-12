@@ -38,14 +38,14 @@ const ContactSection = () => {
               <ArrowRight className="w-4 h-4 text-muted-foreground ml-auto group-hover:translate-x-1 transition-transform" />
             </a>
 
-            <a href="mailto:info@aegisglobal.co.ke"
+            <a href="mailto:linkedin@mywork.co.ke"
               className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card hover:shadow-card hover:border-primary/25 transition group">
               <div className="w-11 h-11 rounded-lg bg-primary/8 text-primary flex items-center justify-center shrink-0">
                 <MailIcon className="w-5 h-5" />
               </div>
               <div>
                 <div className="text-xs text-muted-foreground">Email</div>
-                <div className="font-semibold text-foreground group-hover:text-primary transition">info@aegisglobal.co.ke</div>
+                <div className="font-semibold text-foreground group-hover:text-primary transition">linkedin@mywork.co.ke</div>
               </div>
               <ArrowRight className="w-4 h-4 text-muted-foreground ml-auto group-hover:translate-x-1 transition-transform" />
             </a>
@@ -119,7 +119,7 @@ const ContactSection = () => {
             Submit enquiry <ArrowRight className="w-4 h-4" />
           </button>
           <p className="text-[11px] text-muted-foreground mt-3 text-center">
-            Aegis Global never charges job seekers a placement fee.
+            Our Nairobi team replies within one working day.
           </p>
         </motion.form>
       </div>

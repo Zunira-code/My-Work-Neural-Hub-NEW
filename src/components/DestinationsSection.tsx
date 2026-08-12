@@ -22,7 +22,7 @@ const DestinationsSection = () => {
             </p>
             <div className="mt-8 inline-flex items-center gap-2 px-4 py-2.5 rounded-md bg-primary-foreground/10 border border-primary-foreground/20">
               <Globe2 className="w-4 h-4 text-accent" />
-              <span className="text-sm">No recruitment fees charged to candidates</span>
+              <span className="text-sm">Verified employers · Welfare-first placement</span>
             </div>
           </div>
 

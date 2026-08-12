@@ -27,7 +27,7 @@ const Footer = () => {
           <div className="mt-5 space-y-1.5 text-sm text-primary-foreground/75">
             <div>Westlands, Nairobi, Kenya</div>
             <a href="tel:+254716534393" className="block hover:text-accent transition">+254 716 534 393</a>
-            <a href="mailto:info@aegisglobal.co.ke" className="block hover:text-accent transition">info@aegisglobal.co.ke</a>
+            <a href="mailto:linkedin@mywork.co.ke" className="block hover:text-accent transition">linkedin@mywork.co.ke</a>
           </div>
         </div>
 
@@ -46,7 +46,7 @@ const Footer = () => {
       <div className="border-t border-primary-foreground/15">
         <div className="container-narrow px-4 md:px-8 py-5 flex flex-col md:flex-row gap-3 justify-between items-center text-xs text-primary-foreground/60">
           <div>© {new Date().getFullYear()} Aegis Global Recruitment Agency. Registered in Kenya. All rights reserved.</div>
-          <div>Ethical recruitment · Candidates never pay placement fees</div>
+          <div>Ethical recruitment · Licensed and NEA compliant</div>
         </div>
       </div>
     </footer>

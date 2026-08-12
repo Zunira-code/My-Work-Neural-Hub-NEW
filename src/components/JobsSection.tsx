@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
-import { MapPin, Clock, Banknote, ArrowRight, Briefcase } from "lucide-react";
+import { ArrowRight, Briefcase } from "lucide-react";
 
 const jobs = [
-  { title: "Live-in Caregiver", country: "United Kingdom", type: "Full-time · Sponsored", pay: "£23,200 – £26,000 / yr", tag: "Caregivers" },
-  { title: "Healthcare Assistant (Care Home)", country: "Ireland", type: "Full-time · 2-yr contract", pay: "€30,000 – €34,000 / yr", tag: "Healthcare" },
-  { title: "Hotel Receptionist", country: "United Arab Emirates", type: "Full-time · Live-in", pay: "AED 3,500 – 4,500 / mo", tag: "Receptionists" },
-  { title: "Speciality Barista", country: "Qatar", type: "Full-time · Live-in", pay: "QAR 3,200 – 4,000 / mo", tag: "Baristas" },
-  { title: "Cocktail Mixologist", country: "Saudi Arabia", type: "Full-time · Hotel group", pay: "SAR 4,000 – 5,200 / mo", tag: "Mixologists" },
-  { title: "Elderly Care Assistant", country: "Canada", type: "Full-time · PR pathway", pay: "CAD 38,000 – 44,000 / yr", tag: "Caregivers" },
-  { title: "Medical Receptionist", country: "Germany", type: "Full-time · Visa support", pay: "€2,400 – €2,900 / mo", tag: "Receptionists" },
-  { title: "Cruise Line Bartender", country: "International (Cruise)", type: "8-month rotation", pay: "USD 1,800 – 2,600 / mo", tag: "Mixologists" },
+  { title: "Live-in Caregiver", tag: "Caregivers" },
+  { title: "Healthcare Assistant (Care Home)", tag: "Healthcare" },
+  { title: "Hotel Receptionist", tag: "Receptionists" },
+  { title: "Speciality Barista", tag: "Baristas" },
+  { title: "Cocktail Mixologist", tag: "Mixologists" },
+  { title: "Elderly Care Assistant", tag: "Caregivers" },
+  { title: "Medical Receptionist", tag: "Receptionists" },
+  { title: "Cruise Line Bartender", tag: "Mixologists" },
 ];
 
 const JobsSection = () => {
@@ -20,7 +20,7 @@ const JobsSection = () => {
           <div className="max-w-xl">
             <div className="text-xs uppercase tracking-[0.2em] text-secondary font-bold mb-3">Live Vacancies</div>
             <h2 className="font-display font-bold text-3xl md:text-4xl text-primary mb-3 text-balance">Open roles hiring Kenyan talent now</h2>
-            <p className="text-muted-foreground">Every listing is a verified employer contract with a written offer, defined hours and a lawful visa route.</p>
+            <p className="text-muted-foreground">Every listing is a verified employer contract with a written offer, defined hours and a lawful visa route. Full role details are shared with shortlisted candidates.</p>
           </div>
           <a href="#contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary-glow transition shrink-0">
             Submit your CV <ArrowRight className="w-4 h-4" />
@@ -41,10 +41,8 @@ const JobsSection = () => {
                   <Briefcase className="w-4 h-4" />
                 </div>
               </div>
-              <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
-                <span className="inline-flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" />{j.country}</span>
-                <span className="inline-flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" />{j.type}</span>
-                <span className="inline-flex items-center gap-1.5"><Banknote className="w-3.5 h-3.5" />{j.pay}</span>
+              <div className="text-sm text-muted-foreground">
+                Verified employer vacancy · Full details shared during screening
               </div>
               <a href="#contact" className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-secondary transition">
                 Apply now <ArrowRight className="w-4 h-4" />
