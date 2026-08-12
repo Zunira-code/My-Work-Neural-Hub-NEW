@@ -15,7 +15,7 @@ const guarantees = [
   "Role-specific pre-departure training included",
   "Transparent, single-fee employer pricing",
   "Named account manager in Nairobi and on the ground",
-  "Ethical recruitment — candidates never pay placement fees",
+  "Ethical recruitment — welfare-first, fully compliant",
 ];
 
 const EmployersSection = () => {
