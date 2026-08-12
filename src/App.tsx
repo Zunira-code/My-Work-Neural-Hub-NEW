@@ -5,6 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Unsubscribe from "./pages/Unsubscribe";
+import Auth from "./pages/Auth";
+import EmailLog from "./pages/EmailLog";
 import NotFound from "./pages/NotFound";
 
 
@@ -19,6 +21,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/unsubscribe" element={<Unsubscribe />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/email-log" element={<EmailLog />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
 
           <Route path="*" element={<NotFound />} />
