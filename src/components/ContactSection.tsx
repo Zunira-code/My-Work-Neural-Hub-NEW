@@ -202,8 +202,9 @@ const ContactSection = () => {
 
           </div>
 
-          <button type="submit" className="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary-glow transition">
-            Submit enquiry <ArrowRight className="w-4 h-4" />
+          <button type="submit" disabled={sending} className="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary-glow transition disabled:opacity-60">
+            {sending ? "Sending…" : "Submit enquiry"} <ArrowRight className="w-4 h-4" />
+
           </button>
           <p className="text-[11px] text-muted-foreground mt-3 text-center">
             Our Nairobi team replies within one working day.
