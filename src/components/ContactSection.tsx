@@ -30,7 +30,48 @@ const MailIcon = ({ className = "" }: { className?: string }) => (
 );
 
 const ContactSection = () => {
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    iam: "Job seeker",
+    role: "Caregiver",
+    message: "",
+  });
+
+  const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
+    setForm((f) => ({ ...f, [k]: e.target.value }));
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const parsed = enquirySchema.safeParse(form);
+    if (!parsed.success) {
+      toast({ title: "Check your details", description: parsed.error.issues[0].message, variant: "destructive" });
+      return;
+    }
+    const d = parsed.data;
+    const subject = `Website enquiry — ${d.name} (${d.iam}, ${d.role})`;
+    const body = [
+      `Name: ${d.name}`,
+      `Phone / WhatsApp: ${d.phone}`,
+      `Email: ${d.email}`,
+      `I am a: ${d.iam}`,
+      `Role of interest: ${d.role}`,
+      "",
+      "Message:",
+      d.message || "(none)",
+    ].join("\n");
+
+    window.location.href = `mailto:${ENQUIRY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    toast({
+      title: "Enquiry ready to send",
+      description: `Your email app is opening with the enquiry addressed to ${ENQUIRY_EMAIL}. Press send to complete it.`,
+    });
+  };
+
   return (
+
     <section id="contact" className="section bg-background">
       <div className="container-narrow grid lg:grid-cols-[1fr_1.1fr] gap-12">
         <div>
