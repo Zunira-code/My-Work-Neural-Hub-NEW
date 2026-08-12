@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { MapPin, Clock, ArrowRight } from "lucide-react";
 import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+
 
 const ENQUIRY_EMAIL = "linkedin@mywork.co.ke";
 
