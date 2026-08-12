@@ -92,6 +92,8 @@
   .bg-gradient-hero { background: var(--gradient-hero); }
   .bg-gradient-brand { background: var(--gradient-brand); }
   .bg-gradient-soft { background: var(--gradient-soft); }
+  .bg-ink { background-color: hsl(var(--ink)); }
+
 
   .shadow-soft { box-shadow: var(--shadow-soft); }
   .shadow-card { box-shadow: var(--shadow-card); }
