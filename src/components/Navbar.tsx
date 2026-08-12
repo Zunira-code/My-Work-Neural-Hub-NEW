@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="hidden md:block bg-primary text-primary-foreground/90 text-xs">
         <div className="container-narrow px-4 md:px-8 h-9 flex items-center justify-between">
           <span>Licensed Kenyan recruitment agency · NEA compliant · Ethical, zero-exploitation placement</span>
-          <a href="tel:+254716534393" className="inline-flex items-center gap-1.5 hover:text-accent transition">
+          <a href="tel:+254716534393" className="inline-flex items-center gap-1.5 hover:text-primary-foreground transition">
             <Phone className="w-3.5 h-3.5" /> +254 716 534 393
           </a>
         </div>

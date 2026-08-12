@@ -15,9 +15,9 @@ const HeroSection = () => {
 
       <div className="container-narrow relative z-10 px-4 md:px-8">
         <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/15 border border-accent/40 mb-6">
-            <BadgeCheck className="w-4 h-4 text-accent" />
-            <span className="text-[11px] font-semibold text-accent uppercase tracking-[0.15em]">Global Placement · Nairobi, Kenya</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/15 border border-primary/40 mb-6">
+            <BadgeCheck className="w-4 h-4 text-primary" />
+            <span className="text-[11px] font-semibold text-primary uppercase tracking-[0.15em]">Global Placement · Nairobi, Kenya</span>
           </div>
 
           <h1 className="font-display font-extrabold text-4xl md:text-5xl lg:text-[3.4rem] text-primary-foreground leading-[1.08] mb-5 text-balance">
@@ -60,7 +60,7 @@ const HeroSection = () => {
               { icon: BadgeCheck, n: "96%", l: "Contract completion" },
             ].map((s) => (
               <div key={s.l}>
-                <s.icon className="w-4 h-4 text-accent mb-2" />
+                <s.icon className="w-4 h-4 text-primary mb-2" />
                 <div className="font-display font-bold text-2xl md:text-3xl text-primary-foreground">{s.n}</div>
                 <div className="text-[11px] md:text-xs text-primary-foreground/70 mt-1 leading-snug">{s.l}</div>
               </div>
