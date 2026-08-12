@@ -8,7 +8,7 @@ export default {
     container: { center: true, padding: "2rem", screens: { "2xl": "1400px" } },
     extend: {
       fontFamily: {
-        serif: ['DM Serif Display', 'serif'],
+        display: ['Sora', 'sans-serif'],
         sans: ['Inter', 'sans-serif'],
       },
       colors: {

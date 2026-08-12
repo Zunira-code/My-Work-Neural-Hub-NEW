@@ -1,83 +1,33 @@
-import { motion } from "framer-motion";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
-  {
-    q: "What time zones do your virtual assistants work in?",
-    a: "Our VAs are based in Kenya (EAT, GMT+3) and are trained to align with your business hours — whether you're in the US, UK, Canada, Germany, or Australia. Many of our VAs work flexible or overnight shifts to provide real-time support.",
-  },
-  {
-    q: "How do you ensure data security and confidentiality?",
-    a: "Every VA signs a strict NDA before onboarding. We use encrypted communication channels, secure cloud storage, and role-based access controls. Your data privacy is our top priority.",
-  },
-  {
-    q: "What does the onboarding process look like?",
-    a: "After you book a consultation, we match you with a VA based on your industry and needs. You'll receive an onboarding checklist, a kick-off call, and your VA will be fully briefed and operational within 48 hours.",
-  },
-  {
-    q: "Can I scale up or change my package later?",
-    a: "Absolutely. You can upgrade, downgrade, or add additional VAs at any time. We're built to scale with your business — from solo founder to full C-suite support.",
-  },
-  {
-    q: "What payment methods do you accept?",
-    a: "We accept bank transfers, PayPal, Wise, and major credit/debit cards. Invoices are sent monthly, and we offer flexible billing cycles for long-term clients.",
-  },
-  {
-    q: "What tools and platforms are your VAs trained on?",
-    a: "Our VAs are proficient in Slack, Notion, Trello, Asana, HubSpot, Salesforce, Shopify, QuickBooks, Google Workspace, Microsoft 365, Zapier, and many more. We also train VAs on your custom tools.",
-  },
-  {
-    q: "What if I'm not satisfied with my virtual assistant?",
-    a: "We offer a free replacement guarantee. If your VA isn't the right fit, we'll match you with a new one within 48 hours at no extra cost. Your satisfaction is non-negotiable.",
-  },
+  { q: "Do I have to pay to be placed?", a: "No. Aegis Global operates a candidate-zero-fee model — employers pay our recruitment fee. You are only responsible for your own personal costs such as passport, and in some routes medicals, which we tell you about upfront in writing." },
+  { q: "Which qualifications do I need as a caregiver or healthcare assistant?", a: "Most destinations require a certificate in nursing, community health or care work, plus documented hands-on experience. We also accept strong practical experience and can route you into a top-up certification before departure." },
+  { q: "How long does the whole process take?", a: "Typically 8 to 16 weeks from your first interview to departure, depending on the destination's visa processing times. Gulf routes are usually fastest; UK, Ireland and Canada take longer due to sponsorship checks." },
+  { q: "Do I need to speak a foreign language?", a: "For the UK, Ireland, Canada, the Gulf and cruise lines, professional English is sufficient and we assess it during screening. For Germany and Poland we support candidates through basic language training before departure." },
+  { q: "Is Aegis Global a licensed agency?", a: "Yes. We operate as a Kenyan-registered recruitment agency in line with National Employment Authority requirements, and every overseas contract we place is attested and lodged before departure." },
+  { q: "What support do I get after I travel?", a: "Every placed candidate is assigned a welfare officer who checks in through your first year, plus a 24/7 emergency line and direct escalation to your employer's HR if anything goes wrong." },
+  { q: "Can employers request a specific number of workers?", a: "Yes. We run bulk mobilisation campaigns for cohorts of 10 to 500, including sourcing, screening, training, documentation and staggered deployment schedules." },
+  { q: "What happens if a placement doesn't work out?", a: "Permanent placements carry a 90-day replacement guarantee for employers, and we support candidates in redeployment where a contract ends early through no fault of their own." },
 ];
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="section-padding bg-background">
-      <div className="container mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Frequently Asked <span className="text-gradient">Questions</span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Everything you need to know before getting started.
-          </p>
-        </motion.div>
+    <section className="section bg-gradient-soft">
+      <div className="container-narrow max-w-3xl">
+        <div className="text-center mb-10">
+          <div className="text-xs uppercase tracking-[0.2em] text-secondary font-bold mb-3">FAQs</div>
+          <h2 className="font-display font-bold text-3xl md:text-4xl text-primary text-balance">Questions we get asked every week</h2>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-3xl mx-auto"
-        >
-          <Accordion type="single" collapsible className="space-y-3">
-            {faqs.map((faq, i) => (
-              <AccordionItem
-                key={i}
-                value={`faq-${i}`}
-                className="glass-card rounded-xl px-6 border-none"
-              >
-                <AccordionTrigger className="text-left text-foreground font-semibold hover:no-underline">
-                  {faq.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed">
-                  {faq.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </motion.div>
+        <Accordion type="single" collapsible className="w-full">
+          {faqs.map((f, i) => (
+            <AccordionItem key={f.q} value={`item-${i}`} className="border-b border-border">
+              <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary text-base">{f.q}</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground leading-relaxed">{f.a}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </div>
     </section>
   );
