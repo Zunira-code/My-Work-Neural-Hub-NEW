@@ -1,5 +1,20 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Clock, ArrowRight } from "lucide-react";
+import { z } from "zod";
+import { toast } from "@/hooks/use-toast";
+
+const ENQUIRY_EMAIL = "linkedin@mywork.co.ke";
+
+const enquirySchema = z.object({
+  name: z.string().trim().nonempty({ message: "Please enter your full name" }).max(100),
+  phone: z.string().trim().nonempty({ message: "Please enter a phone or WhatsApp number" }).max(30),
+  email: z.string().trim().email({ message: "Please enter a valid email address" }).max(255),
+  iam: z.string().max(50),
+  role: z.string().max(50),
+  message: z.string().trim().max(1000).optional(),
+});
+
 
 const WhatsAppIcon = ({ className = "" }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
@@ -15,7 +30,48 @@ const MailIcon = ({ className = "" }: { className?: string }) => (
 );
 
 const ContactSection = () => {
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    iam: "Job seeker",
+    role: "Caregiver",
+    message: "",
+  });
+
+  const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
+    setForm((f) => ({ ...f, [k]: e.target.value }));
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const parsed = enquirySchema.safeParse(form);
+    if (!parsed.success) {
+      toast({ title: "Check your details", description: parsed.error.issues[0].message, variant: "destructive" });
+      return;
+    }
+    const d = parsed.data;
+    const subject = `Website enquiry — ${d.name} (${d.iam}, ${d.role})`;
+    const body = [
+      `Name: ${d.name}`,
+      `Phone / WhatsApp: ${d.phone}`,
+      `Email: ${d.email}`,
+      `I am a: ${d.iam}`,
+      `Role of interest: ${d.role}`,
+      "",
+      "Message:",
+      d.message || "(none)",
+    ].join("\n");
+
+    window.location.href = `mailto:${ENQUIRY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    toast({
+      title: "Enquiry ready to send",
+      description: `Your email app is opening with the enquiry addressed to ${ENQUIRY_EMAIL}. Press send to complete it.`,
+    });
+  };
+
   return (
+
     <section id="contact" className="section bg-background">
       <div className="container-narrow grid lg:grid-cols-[1fr_1.1fr] gap-12">
         <div>
@@ -74,26 +130,26 @@ const ContactSection = () => {
 
         <motion.form
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={handleSubmit}
           className="bg-card rounded-2xl border border-border p-6 md:p-8 shadow-card">
           <h3 className="font-display font-semibold text-xl text-foreground mb-6">Send us your details</h3>
 
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
               <label htmlFor="name" className="text-xs font-semibold text-muted-foreground">Full name</label>
-              <input id="name" required className="mt-1.5 w-full px-3 py-2.5 rounded-md border border-input bg-background text-sm outline-none focus:ring-2 focus:ring-ring/30" />
+              <input id="name" value={form.name} onChange={set("name")} maxLength={100} required className="mt-1.5 w-full px-3 py-2.5 rounded-md border border-input bg-background text-sm outline-none focus:ring-2 focus:ring-ring/30" />
             </div>
             <div>
               <label htmlFor="phone" className="text-xs font-semibold text-muted-foreground">Phone / WhatsApp</label>
-              <input id="phone" required className="mt-1.5 w-full px-3 py-2.5 rounded-md border border-input bg-background text-sm outline-none focus:ring-2 focus:ring-ring/30" />
+              <input id="phone" value={form.phone} onChange={set("phone")} maxLength={30} required className="mt-1.5 w-full px-3 py-2.5 rounded-md border border-input bg-background text-sm outline-none focus:ring-2 focus:ring-ring/30" />
             </div>
             <div className="sm:col-span-2">
               <label htmlFor="email" className="text-xs font-semibold text-muted-foreground">Email</label>
-              <input id="email" type="email" required className="mt-1.5 w-full px-3 py-2.5 rounded-md border border-input bg-background text-sm outline-none focus:ring-2 focus:ring-ring/30" />
+              <input id="email" type="email" value={form.email} onChange={set("email")} maxLength={255} required className="mt-1.5 w-full px-3 py-2.5 rounded-md border border-input bg-background text-sm outline-none focus:ring-2 focus:ring-ring/30" />
             </div>
             <div>
               <label htmlFor="iam" className="text-xs font-semibold text-muted-foreground">I am a…</label>
-              <select id="iam" className="mt-1.5 w-full px-3 py-2.5 rounded-md border border-input bg-background text-sm outline-none focus:ring-2 focus:ring-ring/30">
+              <select id="iam" value={form.iam} onChange={set("iam")} className="mt-1.5 w-full px-3 py-2.5 rounded-md border border-input bg-background text-sm outline-none focus:ring-2 focus:ring-ring/30">
                 <option>Job seeker</option>
                 <option>Employer</option>
                 <option>Partner agency</option>
@@ -101,7 +157,7 @@ const ContactSection = () => {
             </div>
             <div>
               <label htmlFor="role" className="text-xs font-semibold text-muted-foreground">Role of interest</label>
-              <select id="role" className="mt-1.5 w-full px-3 py-2.5 rounded-md border border-input bg-background text-sm outline-none focus:ring-2 focus:ring-ring/30">
+              <select id="role" value={form.role} onChange={set("role")} className="mt-1.5 w-full px-3 py-2.5 rounded-md border border-input bg-background text-sm outline-none focus:ring-2 focus:ring-ring/30">
                 <option>Caregiver</option>
                 <option>Healthcare Assistant</option>
                 <option>Receptionist</option>
@@ -111,8 +167,9 @@ const ContactSection = () => {
             </div>
             <div className="sm:col-span-2">
               <label htmlFor="msg" className="text-xs font-semibold text-muted-foreground">Message</label>
-              <textarea id="msg" rows={4} className="mt-1.5 w-full px-3 py-2.5 rounded-md border border-input bg-background text-sm outline-none focus:ring-2 focus:ring-ring/30 resize-none" />
+              <textarea id="msg" rows={4} value={form.message} onChange={set("message")} maxLength={1000} className="mt-1.5 w-full px-3 py-2.5 rounded-md border border-input bg-background text-sm outline-none focus:ring-2 focus:ring-ring/30 resize-none" />
             </div>
+
           </div>
 
           <button type="submit" className="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary-glow transition">
