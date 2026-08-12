@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
-import { MapPin, Clock, Banknote, ArrowRight, Briefcase } from "lucide-react";
+import { ArrowRight, Briefcase } from "lucide-react";
 
 const jobs = [
-  { title: "Live-in Caregiver", country: "United Kingdom", type: "Full-time · Sponsored", pay: "£23,200 – £26,000 / yr", tag: "Caregivers" },
-  { title: "Healthcare Assistant (Care Home)", country: "Ireland", type: "Full-time · 2-yr contract", pay: "€30,000 – €34,000 / yr", tag: "Healthcare" },
-  { title: "Hotel Receptionist", country: "United Arab Emirates", type: "Full-time · Live-in", pay: "AED 3,500 – 4,500 / mo", tag: "Receptionists" },
-  { title: "Speciality Barista", country: "Qatar", type: "Full-time · Live-in", pay: "QAR 3,200 – 4,000 / mo", tag: "Baristas" },
-  { title: "Cocktail Mixologist", country: "Saudi Arabia", type: "Full-time · Hotel group", pay: "SAR 4,000 – 5,200 / mo", tag: "Mixologists" },
-  { title: "Elderly Care Assistant", country: "Canada", type: "Full-time · PR pathway", pay: "CAD 38,000 – 44,000 / yr", tag: "Caregivers" },
-  { title: "Medical Receptionist", country: "Germany", type: "Full-time · Visa support", pay: "€2,400 – €2,900 / mo", tag: "Receptionists" },
-  { title: "Cruise Line Bartender", country: "International (Cruise)", type: "8-month rotation", pay: "USD 1,800 – 2,600 / mo", tag: "Mixologists" },
+  { title: "Live-in Caregiver", tag: "Caregivers" },
+  { title: "Healthcare Assistant (Care Home)", tag: "Healthcare" },
+  { title: "Hotel Receptionist", tag: "Receptionists" },
+  { title: "Speciality Barista", tag: "Baristas" },
+  { title: "Cocktail Mixologist", tag: "Mixologists" },
+  { title: "Elderly Care Assistant", tag: "Caregivers" },
+  { title: "Medical Receptionist", tag: "Receptionists" },
+  { title: "Cruise Line Bartender", tag: "Mixologists" },
 ];
 
 const JobsSection = () => {
