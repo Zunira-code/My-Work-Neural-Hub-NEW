@@ -1,11 +1,12 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import HomesSection from "@/components/HomesSection";
-import HowItWorksSection from "@/components/HowItWorksSection";
-import ImpactSection from "@/components/ImpactSection";
-import SustainabilitySection from "@/components/SustainabilitySection";
-import GetInvolvedSection from "@/components/GetInvolvedSection";
+import SectorsSection from "@/components/SectorsSection";
+import JobsSection from "@/components/JobsSection";
+import DestinationsSection from "@/components/DestinationsSection";
+import ProcessSection from "@/components/ProcessSection";
+import EmployersSection from "@/components/EmployersSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -15,12 +16,13 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <AboutSection />
-        <HomesSection />
-        <HowItWorksSection />
-        <ImpactSection />
-        <SustainabilitySection />
-        <GetInvolvedSection />
+        <SectorsSection />
+        <JobsSection />
+        <DestinationsSection />
+        <ProcessSection />
+        <EmployersSection />
+        <TestimonialsSection />
+        <FAQSection />
         <ContactSection />
       </main>
       <Footer />
