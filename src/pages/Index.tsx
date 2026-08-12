@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import HeroSection from "@/components/HeroSection";
 import SectorsSection from "@/components/SectorsSection";
 import JobsSection from "@/components/JobsSection";
@@ -13,6 +14,11 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="Aegis Global Recruitment Agency | Kenya Jobs Abroad"
+        description="Nairobi recruitment agency placing Kenyan caregivers, healthcare assistants, receptionists, baristas and mixologists in verified jobs abroad."
+        path="/"
+      />
       <Navbar />
       <main>
         <HeroSection />

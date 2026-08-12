@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import Seo from "@/components/Seo";
 
 type State = "loading" | "valid" | "already" | "invalid" | "success" | "error";
 
@@ -43,6 +44,12 @@ const Unsubscribe = () => {
 
   return (
     <main className="min-h-screen flex items-center justify-center bg-muted/40 px-4">
+      <Seo
+        title="Email preferences | Aegis Global Recruitment Agency"
+        description="Manage or cancel email updates from Aegis Global Recruitment Agency, Nairobi."
+        path="/unsubscribe"
+        noindex
+      />
       <section className="w-full max-w-md bg-card border border-border rounded-2xl shadow-card p-8 text-center">
         <div className="text-xs uppercase tracking-[0.2em] text-primary font-bold mb-3">
           Aegis Global Recruitment
