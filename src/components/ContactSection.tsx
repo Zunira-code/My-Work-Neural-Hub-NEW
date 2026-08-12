@@ -1,5 +1,20 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Clock, ArrowRight } from "lucide-react";
+import { z } from "zod";
+import { toast } from "@/hooks/use-toast";
+
+const ENQUIRY_EMAIL = "linkedin@mywork.co.ke";
+
+const enquirySchema = z.object({
+  name: z.string().trim().nonempty({ message: "Please enter your full name" }).max(100),
+  phone: z.string().trim().nonempty({ message: "Please enter a phone or WhatsApp number" }).max(30),
+  email: z.string().trim().email({ message: "Please enter a valid email address" }).max(255),
+  iam: z.string().max(50),
+  role: z.string().max(50),
+  message: z.string().trim().max(1000).optional(),
+});
+
 
 const WhatsAppIcon = ({ className = "" }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
