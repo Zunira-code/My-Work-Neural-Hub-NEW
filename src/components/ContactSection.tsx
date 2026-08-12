@@ -83,6 +83,16 @@ const ContactSection = () => {
         },
       });
 
+      // copy of the client confirmation for the team inbox
+      await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "enquiry-confirmation",
+          recipientEmail: ENQUIRY_EMAIL,
+          idempotencyKey: `enquiry-confirmation-copy-${eventId}`,
+          templateData: { name: d.name, role: d.role },
+        },
+      });
+
       toast({
         title: "Enquiry sent",
         description: "Thank you — our Nairobi team will reply within one working day.",
