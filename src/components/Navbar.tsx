@@ -10,8 +10,9 @@ const links = [
   { label: "Destinations", href: "#destinations" },
   { label: "Employers", href: "#employers" },
   { label: "Process", href: "#process" },
-  { label: "Insights", href: "#insights" },
+  { label: "Apply in Kenya", href: "#kenya" },
   { label: "Contact", href: "#contact" },
+
 ];
 
 const Navbar = () => {
