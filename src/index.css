@@ -30,6 +30,8 @@
     --accent-foreground: 0 0% 100%;
 
     --ink: 0 0% 7%;
+    --whatsapp: 142 70% 49%;
+
 
     --destructive: 356 84% 46%;
     --destructive-foreground: 0 0% 100%;
@@ -93,6 +95,10 @@
   .bg-gradient-brand { background: var(--gradient-brand); }
   .bg-gradient-soft { background: var(--gradient-soft); }
   .bg-ink { background-color: hsl(var(--ink)); }
+  .bg-whatsapp { background-color: hsl(var(--whatsapp)); }
+  .text-whatsapp { color: hsl(var(--whatsapp)); }
+
+
 
 
   .shadow-soft { box-shadow: var(--shadow-soft); }
