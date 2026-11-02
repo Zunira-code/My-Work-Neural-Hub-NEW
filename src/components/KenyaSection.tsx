@@ -17,14 +17,10 @@ const KenyaSection = () => {
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
             Aegis Global Recruitment Agency is based in Westlands, Nairobi, and works with Kenyan job seekers countrywide —
-            from Mombasa and Kisumu to Nakuru, Eldoret and Thika. If you are searching for caregiver jobs abroad,
-            healthcare assistant jobs in the UK or Ireland, receptionist jobs in the UAE, or barista and mixologist jobs
-            in Qatar and Dubai, our team guides you through screening, documentation and departure.
+            from Mombasa and Kisumu to Nakuru, Eldoret and Thika. Registered Nurses (RN, KRCHN/BSN), Clinical Officers, Health Service Support professionals, Medical Doctors, Perioperative Nurses and Psychiatric Nurses can enquire about healthcare recruitment pathways in Germany.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            We work in line with National Employment Authority (NEA) requirements, and every contract is explained to you in
-            writing — in English or Kiswahili — before you commit. You can apply online, WhatsApp us, or book a session at
-            our Nairobi office.
+            Your pathway is assessed individually, including professional recognition and German language requirements. Apply online or contact our Nairobi team on WhatsApp to discuss your qualifications and experience.
           </p>
 
           <div className="flex flex-wrap gap-3">
