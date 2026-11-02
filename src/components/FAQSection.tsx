@@ -1,18 +1,7 @@
+import { healthcareFaqs } from "@/lib/recruitment";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-const faqs = [
-  { q: "How do I apply from Kenya?", a: "Fill in the enquiry form on this page or WhatsApp us on +254 716 534 393. You can also visit our Westlands, Nairobi office Monday to Friday, 8:00am to 5:30pm. Applications are open to candidates countrywide — Nairobi, Mombasa, Kisumu, Nakuru, Eldoret and beyond." },
-  { q: "Which documents do I need as a Kenyan applicant?", a: "A valid Kenyan passport, national ID, KRA PIN, certificate of good conduct, your academic and professional certificates, and a certificate of experience from previous employers. We tell you exactly what is missing after screening." },
-  { q: "How does the application process work?", a: "You submit your details, we screen and interview you, then we match you to a verified employer vacancy. Every cost and requirement in your route is explained to you upfront in writing before you commit." },
-
-  { q: "Which qualifications do I need as a caregiver or healthcare assistant?", a: "Most destinations require a certificate in nursing, community health or care work, plus documented hands-on experience. We also accept strong practical experience and can route you into a top-up certification before departure." },
-  { q: "How long does the whole process take?", a: "Typically 8 to 16 weeks from your first interview to departure, depending on the destination's visa processing times. Gulf routes are usually fastest; UK, Ireland and Canada take longer due to sponsorship checks." },
-  { q: "Do I need to speak a foreign language?", a: "For the UK, Ireland, Canada, the Gulf and cruise lines, professional English is sufficient and we assess it during screening. For Germany and Poland we support candidates through basic language training before departure." },
-  { q: "Is Aegis Global a licensed agency?", a: "Yes. We operate as a Kenyan-registered recruitment agency in line with National Employment Authority requirements, and every overseas contract we place is attested and lodged before departure." },
-  { q: "What support do I get after I travel?", a: "Every placed candidate is assigned a welfare officer who checks in through your first year, plus a 24/7 emergency line and direct escalation to your employer's HR if anything goes wrong." },
-  { q: "Can employers request a specific number of workers?", a: "Yes. We run bulk mobilisation campaigns for cohorts of 10 to 500, including sourcing, screening, training, documentation and staggered deployment schedules." },
-  { q: "What happens if a placement doesn't work out?", a: "Permanent placements carry a 90-day replacement guarantee for employers, and we support candidates in redeployment where a contract ends early through no fault of their own." },
-];
+const faqs = healthcareFaqs;
 
 const FAQSection = () => {
   return (
@@ -20,7 +9,7 @@ const FAQSection = () => {
       <div className="container-narrow max-w-3xl">
         <div className="text-center mb-10">
           <div className="text-xs uppercase tracking-[0.2em] text-secondary font-bold mb-3">FAQs</div>
-          <h2 className="font-display font-bold text-3xl md:text-4xl text-primary text-balance">Questions we get asked every week</h2>
+          <h2 className="font-display font-bold text-3xl md:text-4xl text-primary text-balance">Your Germany healthcare questions</h2>
         </div>
 
         <Accordion type="single" collapsible className="w-full">

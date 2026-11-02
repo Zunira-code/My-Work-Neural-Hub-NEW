@@ -19,4 +19,4 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
-Sitemap: https://mywork.co.ke/sitemap.xml
+Sitemap: https://aegis-global.lovable.app/sitemap.xml
