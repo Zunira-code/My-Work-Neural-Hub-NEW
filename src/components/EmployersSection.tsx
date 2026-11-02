@@ -17,7 +17,7 @@ const guarantees = [
 
 const EmployersSection = () => {
   return (
-    <section id="employers" className="section bg-gradient-soft">
+    <section id="employers" className="section bg-gradient-soft overflow-hidden">
       <div className="container-narrow grid lg:grid-cols-2 gap-14 items-center">
         <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
           <div className="text-xs uppercase tracking-[0.2em] text-secondary font-bold mb-3">For German Healthcare Employers</div>
