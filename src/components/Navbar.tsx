@@ -4,13 +4,11 @@ import { Menu, X, Phone } from "lucide-react";
 import logo from "@/assets/aegis-logo.png";
 
 const links = [
-  { label: "Home", href: "#home" },
-  { label: "Sectors", href: "#sectors" },
+  { label: "Healthcare", href: "#sectors" },
   { label: "Jobs", href: "#jobs" },
-  { label: "Destinations", href: "#destinations" },
+  { label: "Germany", href: "#destinations" },
   { label: "Employers", href: "#employers" },
   { label: "Process", href: "#process" },
-  { label: "Apply in Kenya", href: "#kenya" },
   { label: "Contact", href: "#contact" },
 
 ];
@@ -30,7 +28,7 @@ const Navbar = () => {
       {/* Utility bar */}
       <div className="hidden md:block bg-primary text-primary-foreground/90 text-xs">
         <div className="container-narrow px-4 md:px-8 h-9 flex items-center justify-between">
-          <span>Licensed Kenyan recruitment agency · NEA compliant · Ethical, zero-exploitation placement</span>
+          <span>Healthcare recruitment · Kenya to Germany</span>
           <a href="tel:+254716534393" className="inline-flex items-center gap-1.5 hover:text-primary-foreground transition">
             <Phone className="w-3.5 h-3.5" /> +254 716 534 393
           </a>
@@ -50,7 +48,7 @@ const Navbar = () => {
             </div>
           </a>
 
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-4">
             {links.map((l) => (
               <a key={l.href} href={l.href} className="text-sm font-medium text-foreground/75 hover:text-primary transition-colors">
                 {l.label}
@@ -60,7 +58,7 @@ const Navbar = () => {
 
           <div className="hidden lg:flex items-center gap-3">
             <a href="#jobs" className="px-4 py-2.5 rounded-md border border-primary/25 text-primary font-semibold text-sm hover:bg-muted transition">
-              Find a Job
+              Apply now
             </a>
             <a href="#employers" className="px-4 py-2.5 rounded-md bg-accent text-accent-foreground font-semibold text-sm hover:brightness-105 transition shadow-soft">
               Hire Talent
@@ -83,7 +81,7 @@ const Navbar = () => {
                   </a>
                 ))}
                 <div className="grid grid-cols-2 gap-3 pt-2">
-                  <a href="#jobs" onClick={() => setOpen(false)} className="px-4 py-3 rounded-md border border-primary/25 text-primary font-semibold text-sm text-center">Find a Job</a>
+                  <a href="#jobs" onClick={() => setOpen(false)} className="px-4 py-3 rounded-md border border-primary/25 text-primary font-semibold text-sm text-center">Apply now</a>
                   <a href="#employers" onClick={() => setOpen(false)} className="px-4 py-3 rounded-md bg-accent text-accent-foreground font-semibold text-sm text-center">Hire Talent</a>
                 </div>
               </div>

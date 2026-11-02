@@ -62,8 +62,8 @@ export const template = {
     email: 'jane@example.com',
     phone: '+254 700 000 000',
     iam: 'Job seeker',
-    role: 'Caregiver',
-    message: 'I would like to apply for caregiver placements abroad.',
+    role: 'Registered Nurses (RN, KRCHN/BSN)',
+    message: 'I would like to enquire about nursing opportunities in Germany.',
   },
   to: 'linkedin@mywork.co.ke',
 } satisfies TemplateEntry

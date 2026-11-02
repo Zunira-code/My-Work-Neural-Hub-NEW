@@ -45,7 +45,7 @@ export const template = {
   component: Email,
   subject: 'We have received your enquiry',
   displayName: 'Enquiry confirmation (candidate)',
-  previewData: { name: 'Jane', role: 'Caregiver' },
+  previewData: { name: 'Jane', role: 'Registered Nurses (RN, KRCHN/BSN)' },
 } satisfies TemplateEntry
 
 const main = { backgroundColor: '#ffffff', fontFamily: 'Arial, Helvetica, sans-serif' }

@@ -3,11 +3,11 @@ import { FileCheck2, UserSearch, GraduationCap, PlaneTakeoff, LifeBuoy } from "l
 import consultImg from "@/assets/aegis-consult.jpg";
 
 const steps = [
-  { icon: FileCheck2, title: "Apply & verify", desc: "Submit your CV and documents. We verify certificates, experience and police clearance." },
-  { icon: UserSearch, title: "Screening & matching", desc: "Competency interview, English assessment and a match to a live employer vacancy." },
-  { icon: GraduationCap, title: "Pre-departure training", desc: "Role-specific upskilling, cultural orientation and employer interview coaching." },
-  { icon: PlaneTakeoff, title: "Documentation & travel", desc: "Contract, visa, medicals, NEA clearance and flight logistics handled end to end." },
-  { icon: LifeBuoy, title: "Aftercare abroad", desc: "Arrival support and a dedicated welfare officer for the full length of your contract." },
+  { icon: FileCheck2, title: "Apply & assess", desc: "Share your CV, healthcare qualifications, registration and clinical experience for an individual review." },
+  { icon: GraduationCap, title: "Language & recognition", desc: "Identify German language, qualification recognition and licensing requirements for your profession." },
+  { icon: UserSearch, title: "Employer matching", desc: "Discuss suitable vacancies and interview with healthcare employers, subject to eligibility and availability." },
+  { icon: PlaneTakeoff, title: "Visa & preparation", desc: "Review the employment offer and applicable visa requirements before making travel arrangements." },
+  { icon: LifeBuoy, title: "Arrival & onboarding", desc: "Agree your arrival arrangements and professional onboarding with your employer before departure." },
 ];
 
 const ProcessSection = () => {
@@ -21,8 +21,7 @@ const ProcessSection = () => {
               From application to arrival — five clear stages
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Most candidates move from first interview to boarding pass in 8 to 16 weeks. You'll always know
-              which stage you're at and what happens next.
+              Your Germany pathway depends on your profession, language level, qualification recognition and visa process. We discuss the next steps for your circumstances — without promising a fixed timeline.
             </p>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-card">

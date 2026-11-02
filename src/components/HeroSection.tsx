@@ -1,103 +1,25 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Search, MapPin, ArrowRight, BadgeCheck, Plane, Users } from "lucide-react";
-import heroImg from "@/assets/aegis-hero.jpg";
-import heroImg2 from "@/assets/aegis-hero-2.jpg";
-import heroImg3 from "@/assets/aegis-hero-3.jpg";
+import { ArrowRight, Stethoscope, Languages, FileCheck2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import heroImg from "@/assets/aegis-germany-healthcare.jpg";
 
-const roles = ["Caregivers", "Healthcare Assistants", "Receptionists", "Baristas", "Mixologists"];
-
-const slides = [
-  { src: heroImg, alt: "Kenyan caregiver placed abroad by Aegis Global Recruitment Agency" },
-  { src: heroImg2, alt: "Kenyan receptionist and barista team working in a hotel abroad" },
-  { src: heroImg3, alt: "Kenyan healthcare assistant supporting an elderly resident in a care home abroad" },
-];
-
-const HeroSection = () => {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => setIndex((i) => (i + 1) % slides.length), 6000);
-    return () => clearInterval(id);
-  }, []);
-
-  return (
-    <section id="home" className="relative pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden">
-      <div className="absolute inset-0">
-        <AnimatePresence mode="sync">
-          <motion.img
-            key={index}
-            src={slides[index].src}
-            alt={slides[index].alt}
-            initial={{ opacity: 0, scale: 1.08 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ opacity: { duration: 1.4 }, scale: { duration: 7, ease: "linear" } }}
-            className="absolute inset-0 w-full h-full object-cover object-center"
-            width={1600} height={1100}
-          />
-        </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-hero" />
+const HeroSection = () => (
+  <section id="home" className="relative pt-32 md:pt-40 pb-16 md:pb-20 overflow-hidden">
+    <img src={heroImg} alt="Healthcare professionals in a modern hospital" width={1600} height={1008} className="absolute inset-0 w-full h-full object-cover object-right" />
+    <div className="absolute inset-0 bg-gradient-hero" />
+    <div className="container-narrow relative z-10 px-4 md:px-8">
+      <div className="max-w-2xl">
+        <p className="text-sm font-semibold text-primary-foreground mb-5">HEALTHCARE RECRUITMENT · KENYA TO GERMANY</p>
+        <h1 className="font-display font-extrabold text-4xl md:text-5xl text-primary-foreground leading-tight mb-5">Aegis Global<br /><span className="text-primary-foreground">Healthcare careers in Germany.</span></h1>
+        <p className="text-primary-foreground/85 text-base md:text-lg leading-relaxed mb-8 max-w-xl">Connecting Kenyan registered nurses, clinical officers, health service support professionals, medical doctors and specialised nurses with healthcare recruitment pathways in Germany.</p>
+        <div className="flex flex-wrap gap-3">
+          <Button asChild size="lg"><a href="#contact">Start your application <ArrowRight /></a></Button>
+          <Button asChild size="lg" variant="secondary"><a href="#jobs">Explore healthcare roles <ArrowRight /></a></Button>
+        </div>
+        <div className="mt-10 grid sm:grid-cols-3 gap-5 border-t border-primary-foreground/25 pt-6 max-w-xl">
+          {[{ icon: Stethoscope, label: "Healthcare professionals" }, { icon: Languages, label: "German language pathway" }, { icon: FileCheck2, label: "Qualification assessment" }].map(({ icon: Icon, label }) => <div key={label} className="flex items-start gap-2 text-sm text-primary-foreground/85"><Icon className="w-5 h-5 shrink-0" />{label}</div>)}
+        </div>
       </div>
-
-
-      <div className="container-narrow relative z-10 px-4 md:px-8">
-        <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/15 border border-primary/40 mb-6">
-            <BadgeCheck className="w-4 h-4 text-primary" />
-            <span className="text-[11px] font-semibold text-primary uppercase tracking-[0.15em]">Global Placement · Nairobi, Kenya</span>
-          </div>
-
-          <h1 className="font-display font-extrabold text-4xl md:text-5xl lg:text-[3.4rem] text-primary-foreground leading-[1.08] mb-5 text-balance">
-            Kenyan talent, placed in trusted jobs around the world.
-          </h1>
-
-          <p className="text-primary-foreground/85 text-base md:text-lg leading-relaxed mb-8 max-w-xl">
-            Aegis Global Recruitment Agency connects skilled caregivers, healthcare assistants, receptionists, baristas
-            and mixologists with vetted employers across the Gulf, Europe, North America and beyond — ethically, transparently and end to end.
-          </p>
-
-          {/* Search bar */}
-          <div className="bg-background rounded-xl shadow-lift p-3 flex flex-col sm:flex-row gap-3">
-            <div className="flex items-center gap-2 flex-1 px-3 py-2.5 rounded-md bg-muted">
-              <Search className="w-4 h-4 text-muted-foreground shrink-0" />
-              <input aria-label="Job title" placeholder="Job title e.g. Caregiver" className="bg-transparent text-sm w-full outline-none placeholder:text-muted-foreground" />
-            </div>
-            <div className="flex items-center gap-2 flex-1 px-3 py-2.5 rounded-md bg-muted">
-              <MapPin className="w-4 h-4 text-muted-foreground shrink-0" />
-              <input aria-label="Destination country" placeholder="Country e.g. UAE" className="bg-transparent text-sm w-full outline-none placeholder:text-muted-foreground" />
-            </div>
-            <a href="#jobs" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary-glow transition">
-              Search Jobs <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-
-          <div className="mt-5 flex flex-wrap items-center gap-2">
-            <span className="text-xs text-primary-foreground/70 mr-1">Popular:</span>
-            {roles.map((r) => (
-              <a key={r} href="#jobs" className="text-xs px-3 py-1.5 rounded-full border border-primary-foreground/25 text-primary-foreground/90 hover:bg-primary-foreground/10 transition">
-                {r}
-              </a>
-            ))}
-          </div>
-
-          <div className="mt-10 grid grid-cols-3 gap-5 max-w-lg">
-            {[
-              { icon: Users, n: "3,800+", l: "Candidates placed" },
-              { icon: Plane, n: "14", l: "Destination countries" },
-              { icon: BadgeCheck, n: "96%", l: "Contract completion" },
-            ].map((s) => (
-              <div key={s.l}>
-                <s.icon className="w-4 h-4 text-primary mb-2" />
-                <div className="font-display font-bold text-2xl md:text-3xl text-primary-foreground">{s.n}</div>
-                <div className="text-[11px] md:text-xs text-primary-foreground/70 mt-1 leading-snug">{s.l}</div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  );
-};
-
+    </div>
+  </section>
+);
 export default HeroSection;

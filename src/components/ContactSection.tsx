@@ -1,3 +1,5 @@
+import { healthcareRoleTitles } from "@/lib/recruitment";
+import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Clock, ArrowRight } from "lucide-react";
@@ -37,7 +39,7 @@ const ContactSection = () => {
     phone: "",
     email: "",
     iam: "Job seeker",
-    role: "Caregiver",
+    role: healthcareRoleTitles[0],
     message: "",
   });
 
@@ -97,7 +99,7 @@ const ContactSection = () => {
         title: "Enquiry sent",
         description: "Thank you — our Nairobi team will reply within one working day.",
       });
-      setForm({ name: "", phone: "", email: "", iam: "Job seeker", role: "Caregiver", message: "" });
+      setForm({ name: "", phone: "", email: "", iam: "Job seeker", role: healthcareRoleTitles[0], message: "" });
     } catch {
       toast({
         title: "Could not send enquiry",
@@ -116,15 +118,15 @@ const ContactSection = () => {
       <div className="container-narrow grid lg:grid-cols-[1fr_1.1fr] gap-12">
         <div>
           <div className="text-xs uppercase tracking-[0.2em] text-secondary font-bold mb-3">Get in Touch</div>
-          <h2 className="font-display font-bold text-3xl md:text-4xl text-primary mb-4 text-balance">Start your application or brief us on a vacancy</h2>
+          <h2 className="font-display font-bold text-3xl md:text-4xl text-primary mb-4 text-balance">Apply for healthcare work in Germany</h2>
           <p className="text-muted-foreground mb-8 leading-relaxed">
-            Our Nairobi team responds to every enquiry within one working day.
+            Tell our Nairobi team about your healthcare qualifications, experience and German language level, or share your staffing needs in Germany.
           </p>
 
           <div className="space-y-3">
             <a href="https://wa.me/254716534393" target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card hover:shadow-card hover:border-primary/25 transition group">
-              <div className="w-11 h-11 rounded-lg bg-[#25D366]/10 text-[#25D366] flex items-center justify-center shrink-0">
+              <div className="w-11 h-11 rounded-lg bg-muted text-whatsapp flex items-center justify-center shrink-0">
                 <WhatsAppIcon className="w-5 h-5" />
               </div>
               <div>
@@ -198,24 +200,20 @@ const ContactSection = () => {
             <div>
               <label htmlFor="role" className="text-xs font-semibold text-muted-foreground">Role of interest</label>
               <select id="role" value={form.role} onChange={set("role")} className="mt-1.5 w-full px-3 py-2.5 rounded-md border border-input bg-background text-sm outline-none focus:ring-2 focus:ring-ring/30">
-                <option>Caregiver</option>
-                <option>Healthcare Assistant</option>
-                <option>Receptionist</option>
-                <option>Barista</option>
-                <option>Mixologist</option>
+                {healthcareRoleTitles.map((role) => <option key={role}>{role}</option>)}
               </select>
             </div>
             <div className="sm:col-span-2">
               <label htmlFor="msg" className="text-xs font-semibold text-muted-foreground">Message</label>
-              <textarea id="msg" rows={4} value={form.message} onChange={set("message")} maxLength={1000} className="mt-1.5 w-full px-3 py-2.5 rounded-md border border-input bg-background text-sm outline-none focus:ring-2 focus:ring-ring/30 resize-none" />
+              <textarea id="msg" rows={4} placeholder="Your qualifications, clinical experience and German language level" value={form.message} onChange={set("message")} maxLength={1000} className="mt-1.5 w-full px-3 py-2.5 rounded-md border border-input bg-background text-sm outline-none focus:ring-2 focus:ring-ring/30 resize-none" />
             </div>
 
           </div>
 
-          <button type="submit" disabled={sending} className="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary-glow transition disabled:opacity-60">
+          <Button type="submit" disabled={sending} className="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary-glow transition disabled:opacity-60">
             {sending ? "Sending…" : "Submit enquiry"} <ArrowRight className="w-4 h-4" />
 
-          </button>
+          </Button>
           <p className="text-[11px] text-muted-foreground mt-3 text-center">
             Our Nairobi team replies within one working day.
           </p>

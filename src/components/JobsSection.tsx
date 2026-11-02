@@ -1,16 +1,8 @@
+import { healthcareRoles } from "@/lib/recruitment";
 import { motion } from "framer-motion";
 import { ArrowRight, Briefcase } from "lucide-react";
 
-const jobs = [
-  { title: "Live-in Caregiver", tag: "Caregivers" },
-  { title: "Healthcare Assistant (Care Home)", tag: "Healthcare" },
-  { title: "Hotel Receptionist", tag: "Receptionists" },
-  { title: "Speciality Barista", tag: "Baristas" },
-  { title: "Cocktail Mixologist", tag: "Mixologists" },
-  { title: "Elderly Care Assistant", tag: "Caregivers" },
-  { title: "Medical Receptionist", tag: "Receptionists" },
-  { title: "Cruise Line Bartender", tag: "Mixologists" },
-];
+const jobs = healthcareRoles;
 
 const JobsSection = () => {
   return (
@@ -18,12 +10,12 @@ const JobsSection = () => {
       <div className="container-narrow">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div className="max-w-xl">
-            <div className="text-xs uppercase tracking-[0.2em] text-secondary font-bold mb-3">Live Vacancies</div>
-            <h2 className="font-display font-bold text-3xl md:text-4xl text-primary mb-3 text-balance">Open roles hiring Kenyan talent now</h2>
-            <p className="text-muted-foreground">Every listing is a verified employer contract with a written offer, defined hours and a lawful visa route. Full role details are shared with shortlisted candidates.</p>
+            <div className="text-xs uppercase tracking-[0.2em] text-secondary font-bold mb-3">Healthcare Opportunities</div>
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-primary mb-3 text-balance">Healthcare roles we recruit for</h2>
+            <p className="text-muted-foreground">Explore our healthcare recruitment categories. Current vacancy availability, recognition requirements and employer criteria are confirmed during assessment.</p>
           </div>
           <a href="#contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary-glow transition shrink-0">
-            Submit your CV <ArrowRight className="w-4 h-4" />
+            Enquire about a role <ArrowRight className="w-4 h-4" />
           </a>
         </div>
 
@@ -42,7 +34,7 @@ const JobsSection = () => {
                 </div>
               </div>
               <div className="text-sm text-muted-foreground">
-                Verified employer vacancy · Full details shared during screening
+                Professional eligibility and vacancy availability assessed individually
               </div>
               <a href="#contact" className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-secondary transition">
                 Apply now <ArrowRight className="w-4 h-4" />
